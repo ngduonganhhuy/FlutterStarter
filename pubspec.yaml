@@ -1,0 +1,43 @@
+name: flutter_stater
+description: Flutter clean architecture built by Holmes with Love <3
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.4.0
+
+dependencies:
+  bloc: ^8.1.4
+  collection: ^1.18.0
+  dio: ^5.6.0
+  equatable: ^2.0.5
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.6
+  flutter_localizations:
+    sdk: flutter
+  flutter_screenutil: ^5.9.3
+  flutter_smart_dialog:
+    path: packages/flutter_smart_dialog
+  get_it: ^7.7.0
+  intl: ^0.19.0
+  logger:
+    path: packages/logger
+  package_info_plus: ^8.0.2
+  path_provider: ^2.1.4
+  shared_preferences: ^2.3.1
+  
+
+dev_dependencies:
+  bloc_test: ^9.1.7
+  build_runner: ^2.4.12
+  flutter_test:
+    sdk: flutter
+  http_mock_adapter: ^0.5.0
+  mockito: ^5.4.4
+  mocktail: ^1.0.4
+  very_good_analysis: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true
