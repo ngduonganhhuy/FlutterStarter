@@ -22,8 +22,6 @@ migrate_working_dir/
 .settings/
 .vscode/*
 
-# packages file containing multi-root paths
-.packages.generated
 
 # Flutter/Dart/Pub related
 **/doc/api/
