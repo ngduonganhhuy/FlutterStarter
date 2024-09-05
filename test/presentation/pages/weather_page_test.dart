@@ -3,11 +3,12 @@ import 'dart:io';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_starter/domain/entities/weather.dart';
 import 'package:flutter_starter/presentation/bloc/weather/weather_bloc.dart';
 import 'package:flutter_starter/presentation/pages/weather/weather_page.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+
+import '../../mock_data/data_weather.dart';
 
 class MockWeatherBloc extends MockBloc<WeatherEvent, WeatherState> implements WeatherBloc {}
 
@@ -27,16 +28,6 @@ void main() {
       ),
     );
   }
-
-  const testWeather = WeatherEntity(
-    cityName: 'New York',
-    main: 'Clouds',
-    description: 'few clouds',
-    iconCode: '02d',
-    temperature: 302.28,
-    pressure: 1009,
-    humidity: 70,
-  );
 
   testWidgets(
     'text field should trigger state to change from empty to loading',
@@ -72,7 +63,7 @@ void main() {
     'should show widget contain weather data when state is weather loaded',
     (widgetTester) async {
       //arrange
-      when(() => mockWeatherBloc.state).thenReturn(const WeatherLoaded(testWeather));
+      when(() => mockWeatherBloc.state).thenReturn(const WeatherLoaded(testWeatherEntity));
 
       //act
       await widgetTester.pumpWidget(makeTestableWidget(const WeatherPage()));

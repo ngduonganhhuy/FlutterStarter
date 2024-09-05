@@ -14,8 +14,7 @@
         "development",
         "--target",
         "lib/root/main_development.dart",
-        "--dart-define-from-file",
-        "=.env_dev",
+        "--dart-define-from-file=.env_dev",
       ]
     },
     {

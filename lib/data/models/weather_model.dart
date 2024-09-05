@@ -33,4 +33,24 @@ class WeatherModel extends WeatherEntity {
         name: json['name'] as String?,
         cod: json['cod'] as int?,
       );
+
+  Map<String, dynamic> toJson() => {
+        'coord': coord?.toJson(),
+        'weather': weather
+            ?.map(
+              (e) => e.toJson(),
+            )
+            .toList(),
+        'base': base,
+        'main': main?.toJson(),
+        'visibility': visibility,
+        'wind': wind?.toJson(),
+        'clouds': clouds?.toJson(),
+        'dt': dt,
+        'sys': sys?.toJson(),
+        'timezone': timezone,
+        'id': id,
+        'name': name,
+        'cod': cod,
+      };
 }

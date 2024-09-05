@@ -34,6 +34,11 @@ class Coord extends Equatable {
         lon: json['lon'] as double?,
         lat: json['lat'] as double?,
       );
+
+  Map<String, dynamic> toJson() => {
+        'lon': lon,
+        'lat': lat,
+      };
 }
 
 class Weather extends Equatable {
@@ -49,6 +54,13 @@ class Weather extends Equatable {
         description: json['description'] as String?,
         icon: json['icon'] as String?,
       );
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'main': main,
+        'description': description,
+        'icon': icon,
+      };
 
   @override
   List<Object?> get props => [id, main, description, icon];
@@ -77,6 +89,17 @@ class Main extends Equatable {
         grndLevel: json['grnd_level'] as int?,
       );
 
+  Map<String, dynamic> toJson() => {
+        'temp': temp,
+        'feels_like': feelsLike,
+        'temp_min': tempMin,
+        'temp_max': tempMax,
+        'pressure': pressure,
+        'humidity': humidity,
+        'sea_level': seaLevel,
+        'grnd_level': grndLevel,
+      };
+
   @override
   List<Object?> get props {
     return [
@@ -103,6 +126,11 @@ class Wind extends Equatable {
         deg: json['deg'] as int?,
       );
 
+  Map<String, dynamic> toJson() => {
+        'speed': speed,
+        'deg': deg,
+      };
+
   @override
   List<Object?> get props => [speed, deg];
 }
@@ -115,6 +143,10 @@ class Clouds extends Equatable {
   factory Clouds.fromJson(Map<String, dynamic> json) => Clouds(
         all: json['all'] as int?,
       );
+
+  Map<String, dynamic> toJson() => {
+        'all': all,
+      };
 
   @override
   List<Object?> get props => [all];
@@ -136,6 +168,14 @@ class Sys extends Equatable {
         sunrise: json['sunrise'] as int?,
         sunset: json['sunset'] as int?,
       );
+
+  Map<String, dynamic> toJson() => {
+        'type': type,
+        'id': id,
+        'country': country,
+        'sunrise': sunrise,
+        'sunset': sunset,
+      };
 
   @override
   List<Object?> get props {

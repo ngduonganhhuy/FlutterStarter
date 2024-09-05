@@ -5,16 +5,11 @@ import 'package:flutter_starter/domain/entities/weather.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../helpers/json_reader.dart';
+import '../../mock_data/data_weather.dart';
 
 void main() {
-  const testWeatherModel = WeatherModel(
-    cityName: 'New York',
-    main: 'Clear',
-    description: 'clear sky',
-    iconCode: '01n',
-    temperature: 292.87,
-    pressure: 1012,
-    humidity: 70,
+  final testWeatherModel = WeatherModel.fromJson(
+    dataWeather,
   );
 
   test('should be a subclass of weather entity', () async {

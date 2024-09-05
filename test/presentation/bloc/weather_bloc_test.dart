@@ -1,12 +1,12 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_starter/core/error/failure.dart';
 import 'package:flutter_starter/core/impl/result_response.dart';
-import 'package:flutter_starter/domain/entities/weather.dart';
 import 'package:flutter_starter/presentation/bloc/weather/weather_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../helpers/test_helper.mocks.dart';
+import '../../mock_data/data_weather.dart';
 
 void main() {
   late MockGetCurrentWeatherUseCase mockGetCurrentWeatherUseCase;
@@ -16,16 +16,6 @@ void main() {
     mockGetCurrentWeatherUseCase = MockGetCurrentWeatherUseCase();
     weatherBloc = WeatherBloc(mockGetCurrentWeatherUseCase);
   });
-
-  const testWeather = WeatherEntity(
-    cityName: 'New York',
-    main: 'Clouds',
-    description: 'few clouds',
-    iconCode: '02d',
-    temperature: 302.28,
-    pressure: 1009,
-    humidity: 70,
-  );
 
   const testCityName = 'New York';
 
@@ -38,14 +28,14 @@ void main() {
     build: () {
       when(
         mockGetCurrentWeatherUseCase.execute(testCityName),
-      ).thenAnswer((_) async => ResultResponse.success(testWeather));
+      ).thenAnswer((_) async => ResultResponse.success(testWeatherEntity));
       return weatherBloc;
     },
     act: (bloc) => bloc.add(const OnCityChanged(testCityName)),
     wait: const Duration(milliseconds: 500),
     expect: () => [
       WeatherLoading(),
-      const WeatherLoaded(testWeather),
+      const WeatherLoaded(testWeatherEntity),
     ],
   );
 

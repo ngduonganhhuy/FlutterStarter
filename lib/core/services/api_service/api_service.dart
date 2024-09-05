@@ -51,7 +51,6 @@ class ApiService {
 
   // ------------------------- Base -------------------------
   static Map<String, String?> getHeader() {
-    print(AppConstants.isDev);
     return {
       'User-Agent': _userAgent,
       if (Utils.isNotNullOrEmpty(token)) 'Authorization': 'Bearer $token',

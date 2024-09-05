@@ -10,6 +10,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../helpers/test_helper.mocks.dart';
+import '../../mock_data/data_weather.dart';
 
 void main() {
   late MockWeatherRemoteDataSource mockWeatherRemoteDataSource;
@@ -22,25 +23,7 @@ void main() {
     );
   });
 
-  const testWeatherModel = WeatherModel(
-    cityName: 'New York',
-    main: 'Clouds',
-    description: 'few clouds',
-    iconCode: '02d',
-    temperature: 302.28,
-    pressure: 1009,
-    humidity: 70,
-  );
-
-  const testWeatherEntity = WeatherEntity(
-    cityName: 'New York',
-    main: 'Clouds',
-    description: 'few clouds',
-    iconCode: '02d',
-    temperature: 302.28,
-    pressure: 1009,
-    humidity: 70,
-  );
+  final testWeatherModel = WeatherModel.fromJson(dataWeather);
 
   const testCityName = 'New York';
 
