@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:flutter_stater/data/models/weather_model.dart';
-import 'package:flutter_stater/domain/entities/weather.dart';
+import 'package:flutter_starter/data/models/weather_model.dart';
+import 'package:flutter_starter/domain/entities/weather.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../helpers/json_reader.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_stater/core/themes/app_text_styles.dart';
+import 'package:flutter_starter/core/themes/app_text_styles.dart';
 
 class MediumText extends StatelessWidget {
   const MediumText(this.text, {super.key, this.color, this.fontSize});

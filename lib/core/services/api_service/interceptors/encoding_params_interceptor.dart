@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_stater/core/utils/utils.dart';
+import 'package:flutter_starter/core/utils/utils.dart';
 
 class EncodingParamsInterceptor extends Interceptor {
   @override

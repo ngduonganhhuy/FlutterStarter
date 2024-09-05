@@ -46,6 +46,7 @@ class ApiErrorMessage {
   static const BAD_RESPONSE = 'Có lỗi xảy ra (code: 110)';
   static const CONNECTION_ERROR = 'Có lỗi xảy ra (code: 111)';
   static const NULL_RESPONSE = 'Có lỗi xảy ra (code: 112)';
+  static const UNAUTHORIZED = 'Có lỗi xảy ra (code: 113)';
 
   static const ERROR_TRY_LATER = 'Có lỗi xảy ra. Vui lòng thử lại sau!';
 }
@@ -58,6 +59,10 @@ class ApiStatusCode {
   static const NotHavePermission = 403;
   static const InternalServerError = 500;
   static const AppCastError = 9999;
+}
+
+class UnAuthorizeException extends ApiException {
+  UnAuthorizeException() : super(error: ApiErrorMessage.UNAUTHORIZED, statusCode: 401);
 }
 
 class NoPemissionException extends ApiException {

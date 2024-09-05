@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_stater/core/impl/base_page.dart';
-import 'package:flutter_stater/core/utils/device_utils.dart';
-import 'package:flutter_stater/core/utils/utils.dart';
-import 'package:flutter_stater/presentation/pages/home/home_page.dart';
+import 'package:flutter_starter/core/impl/base_page.dart';
+import 'package:flutter_starter/core/utils/device_utils.dart';
+import 'package:flutter_starter/core/utils/utils.dart';
+import 'package:flutter_starter/presentation/pages/home/home_page.dart';
+import 'package:flutter_starter/presentation/pages/weather/weather_page.dart';
 
 class NavigatorService {
   static Future<T?> _goTo<T extends Object?>(
@@ -60,5 +61,9 @@ class NavigatorService {
 
   static Future<T?> goToHomePage<T extends Object?>(BuildContext context) async {
     return _goTo<T>(context, const HomePage());
+  }
+
+  static Future<T?> goToWeatherPage<T extends Object?>(BuildContext context) async {
+    return _goTo<T>(context, const WeatherPage());
   }
 }

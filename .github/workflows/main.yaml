@@ -1,4 +1,4 @@
-name: flutter_stater
+name: flutter_starter
 
 concurrency:
   group: $-$

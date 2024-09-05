@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_stater/domain/entities/weather.dart';
-import 'package:flutter_stater/presentation/bloc/weather/weather_bloc.dart';
-import 'package:flutter_stater/presentation/pages/weather/weather_page.dart';
+import 'package:flutter_starter/domain/entities/weather.dart';
+import 'package:flutter_starter/presentation/bloc/weather/weather_bloc.dart';
+import 'package:flutter_starter/presentation/pages/weather/weather_page.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

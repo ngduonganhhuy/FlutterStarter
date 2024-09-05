@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_stater/core/error/exception.dart';
-import 'package:flutter_stater/core/impl/result_response.dart';
-import 'package:flutter_stater/domain/entities/weather.dart';
-import 'package:flutter_stater/domain/usecases/get_current_weather.dart';
+import 'package:flutter_starter/core/error/exception.dart';
+import 'package:flutter_starter/core/impl/result_response.dart';
+import 'package:flutter_starter/domain/entities/weather.dart';
+import 'package:flutter_starter/domain/usecases/get_current_weather.dart';
 
 part 'weather_event.dart';
 part 'weather_state.dart';

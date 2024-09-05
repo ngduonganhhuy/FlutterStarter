@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_stater/core/constants/constants.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_starter/core/constants/constants.dart';
 
 final roboto = RobotoTextStyle();
 final appFont = AppTextStyles();
@@ -19,7 +20,7 @@ class AppTextStyles {
 
   TextStyle size14({double? lineHeight, FontWeight? fontWeight, Color? color}) {
     return useFont().copyWith(
-      fontSize: 14,
+      fontSize: 14.sp,
       color: color,
       fontWeight: fontWeight ?? FontWeight.w400,
       height: _height(lineHeight, 14),
@@ -28,7 +29,7 @@ class AppTextStyles {
 
   TextStyle size16({double? lineHeight, FontWeight? fontWeight, Color? color}) {
     return useFont().copyWith(
-      fontSize: 16,
+      fontSize: 16.sp,
       color: color,
       fontWeight: fontWeight ?? FontWeight.w400,
       height: _height(lineHeight, 16),
@@ -37,7 +38,7 @@ class AppTextStyles {
 
   TextStyle size20({double? lineHeight, FontWeight? fontWeight, Color? color}) {
     return useFont().copyWith(
-      fontSize: 20,
+      fontSize: 20.sp,
       color: color,
       fontWeight: fontWeight ?? FontWeight.w400,
       height: _height(lineHeight, 20),

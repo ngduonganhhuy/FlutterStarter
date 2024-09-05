@@ -1,6 +1,6 @@
 {
-    "name": "Flutter Stater",
-    "short_name": "Flutter Stater",
+    "name": "Flutter starter",
+    "short_name": "Flutter starter",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

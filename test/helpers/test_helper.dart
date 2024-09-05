@@ -1,7 +1,6 @@
-import 'package:flutter_stater/data/data_sources/remote_data_source.dart';
-import 'package:flutter_stater/domain/repositories/weather_repository.dart';
-import 'package:flutter_stater/domain/usecases/get_current_weather.dart';
-import 'package:http/http.dart' as http;
+import 'package:flutter_starter/data/data_sources/remote_data_source.dart';
+import 'package:flutter_starter/domain/repositories/weather_repository.dart';
+import 'package:flutter_starter/domain/usecases/get_current_weather.dart';
 import 'package:mockito/annotations.dart';
 
 @GenerateMocks(
@@ -10,6 +9,5 @@ import 'package:mockito/annotations.dart';
     WeatherRemoteDataSource,
     GetCurrentWeatherUseCase,
   ],
-  customMocks: [MockSpec<http.Client>(as: #MockHttpClient)],
 )
 void main() {}

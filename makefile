@@ -52,7 +52,7 @@ openios:
 env:
 	flutter run --dart-define-from-file=.env
 
-SOURCE_FILE := .env_debug
+SOURCE_FILE := .env_dev
 TARGET_FILE := .env
 copy-env:
 	cp $(SOURCE_FILE) $(TARGET_FILE)

@@ -1,51 +1,36 @@
-import 'package:flutter_stater/domain/entities/weather.dart';
+import 'package:flutter_starter/core/utils/utils.dart';
+import 'package:flutter_starter/domain/entities/weather.dart';
 
 class WeatherModel extends WeatherEntity {
   const WeatherModel({
-    required super.cityName,
-    required super.main,
-    required super.description,
-    required super.iconCode,
-    required super.temperature,
-    required super.pressure,
-    required super.humidity,
+    super.coord,
+    super.weather,
+    super.base,
+    super.main,
+    super.visibility,
+    super.wind,
+    super.clouds,
+    super.dt,
+    super.sys,
+    super.timezone,
+    super.id,
+    super.name,
+    super.cod,
   });
 
-  factory WeatherModel.fromJson(Map<String, dynamic> map) {
-    return WeatherModel(
-      cityName: map['cityName'] as String,
-      main: map['main'] as String,
-      description: map['description'] as String,
-      iconCode: map['iconCode'] as String,
-      temperature: map['temperature'] as double,
-      pressure: map['pressure'] as int,
-      humidity: map['humidity'] as int,
-    );
-  }
-
-  Map<String, dynamic> toJson() => {
-        'weather': [
-          {
-            'main': main,
-            'description': description,
-            'icon': iconCode,
-          },
-        ],
-        'main': {
-          'temp': temperature,
-          'pressure': pressure,
-          'humidity': humidity,
-        },
-        'name': cityName,
-      };
-
-  WeatherEntity toEntity() => WeatherEntity(
-        cityName: cityName,
-        main: main,
-        description: description,
-        iconCode: iconCode,
-        temperature: temperature,
-        pressure: pressure,
-        humidity: humidity,
+  factory WeatherModel.fromJson(Map<String, dynamic> json) => WeatherModel(
+        coord: Utils.jsonToModel(json['coord'], Coord.fromJson),
+        weather: Utils.jsonToList(json['weather'], Weather.fromJson),
+        base: json['base'] as String?,
+        main: Utils.jsonToModel(json['main'], Main.fromJson),
+        visibility: json['visibility'] as int?,
+        wind: Utils.jsonToModel(json['wind'], Wind.fromJson),
+        clouds: Utils.jsonToModel(json['clouds'], Clouds.fromJson),
+        dt: json['dt'] as int?,
+        sys: Utils.jsonToModel(json['sys'], Sys.fromJson),
+        timezone: json['timezone'] as int?,
+        id: json['id'] as int?,
+        name: json['name'] as String?,
+        cod: json['cod'] as int?,
       );
 }

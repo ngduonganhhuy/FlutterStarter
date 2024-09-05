@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(flutter_stater LANGUAGES CXX)
+project(flutter_starter LANGUAGES CXX)
 
-set(BINARY_NAME "flutter_stater")
+set(BINARY_NAME "flutter_starter")
 
 cmake_policy(SET CMP0063 NEW)
 

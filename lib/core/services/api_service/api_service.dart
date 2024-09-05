@@ -3,15 +3,16 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_stater/core/constants/app_constants.dart';
-import 'package:flutter_stater/core/error/exception.dart';
-import 'package:flutter_stater/core/services/api_service/interceptors/debug_interceptor.dart';
-import 'package:flutter_stater/core/services/api_service/interceptors/encoding_params_interceptor.dart';
-import 'package:flutter_stater/core/services/api_service/interceptors/refresh_interceptor.dart';
-import 'package:flutter_stater/core/utils/logger.dart';
-import 'package:flutter_stater/core/utils/logout_helper.dart';
-import 'package:flutter_stater/core/utils/path_helper.dart';
-import 'package:flutter_stater/core/utils/utils.dart';
+import 'package:flutter_starter/core/constants/app_constants.dart';
+import 'package:flutter_starter/core/env/env.dart';
+import 'package:flutter_starter/core/error/exception.dart';
+import 'package:flutter_starter/core/services/api_service/interceptors/debug_interceptor.dart';
+import 'package:flutter_starter/core/services/api_service/interceptors/encoding_params_interceptor.dart';
+import 'package:flutter_starter/core/services/api_service/interceptors/refresh_interceptor.dart';
+import 'package:flutter_starter/core/utils/logger.dart';
+import 'package:flutter_starter/core/utils/logout_helper.dart';
+import 'package:flutter_starter/core/utils/path_helper.dart';
+import 'package:flutter_starter/core/utils/utils.dart';
 
 enum RequestMethod { NONE, GET, POST, PATCH, PUT, DELETE, DOWNLOAD }
 
@@ -23,12 +24,12 @@ class ApiService {
   static String token = '';
   static CancelToken _cancelToken = CancelToken();
 
-  static final Dio _dio = Dio(BaseOptions(connectTimeout: const Duration(seconds: _timeout), baseUrl: AppConstants.baseUrl))
+  static final Dio _dio = Dio(BaseOptions(connectTimeout: const Duration(seconds: _timeout), baseUrl: Env.baseUrl))
     ..interceptors.add(EncodingParamsInterceptor())
     ..interceptors.add(AppConstants.isDev ? DebugInterceptor(printOnSuccess: true) : const Interceptor())
     ..interceptors.add(RefreshInterceptor());
 
-  static final Dio refreshTokenDio = Dio(BaseOptions(baseUrl: AppConstants.baseUrl))
+  static final Dio refreshTokenDio = Dio(BaseOptions(baseUrl: Env.baseUrl))
     ..interceptors.add(EncodingParamsInterceptor())
     ..interceptors.add(kDebugMode ? DebugInterceptor(printOnSuccess: true) : const Interceptor());
 
@@ -50,6 +51,7 @@ class ApiService {
 
   // ------------------------- Base -------------------------
   static Map<String, String?> getHeader() {
+    print(AppConstants.isDev);
     return {
       'User-Agent': _userAgent,
       if (Utils.isNotNullOrEmpty(token)) 'Authorization': 'Bearer $token',
@@ -120,13 +122,33 @@ class ApiService {
     }
   }
 
+  static void _handleStatusCodeValidate(int? statusCode, String? errorMessage, int? errorCode) {
+    switch (statusCode) {
+      case ApiStatusCode.Unauthorized:
+        _cancelToken.cancel();
+        if (hasToken()) {
+          LogoutHelper.handleLogout();
+        } else {
+          throw UnAuthorizeException();
+        }
+      case ApiStatusCode.NotHavePermission:
+        throw NoPemissionException();
+      default:
+        throw ApiException(
+          error: errorMessage,
+          statusCode: statusCode,
+        );
+    }
+  }
+
   static void _handelDioError(String url, DioException error) {
     final dioResponse = error.response;
     if (dioResponse != null) {
       AppLogger.d('API FAIL 1 - $url - ${dioResponse.statusCode} - ${dioResponse.statusMessage}');
       Utils.logWithJson('', dioResponse.data, dioResponse.statusCode, dioResponse.statusMessage);
-      var errorMessage = '';
+      String? errorMessage;
       int? errorCode;
+      final statusCode = dioResponse.statusCode;
       if (dioResponse.data is Map<String, dynamic>) {
         final data = dioResponse.data as Map<String, dynamic>;
         final errorResponse = Utils.jsonToModel<ApiException>(data, ApiException.fromJson);
@@ -139,23 +161,7 @@ class ApiService {
           errorCode = ApiStatusCode.AppCastError;
         }
       }
-
-      if (dioResponse.statusCode == ApiStatusCode.Unauthorized) {
-        _cancelToken.cancel();
-        if (hasToken()) {
-          LogoutHelper.handleLogout();
-        } else {
-          throw ApiException(error: errorMessage, statusCode: dioResponse.statusCode, errorCode: errorCode);
-        }
-      } else if (dioResponse.statusCode == ApiStatusCode.NotHavePermission) {
-        throw NoPemissionException();
-      } else {
-        throw ApiException(
-          error: errorMessage,
-          statusCode: dioResponse.statusCode,
-          errorCode: errorCode,
-        );
-      }
+      _handleStatusCodeValidate(statusCode, errorMessage, errorCode);
     } else {
       AppLogger.d('API FAIL 2 - $url - ${error.message}');
       switch (error.type) {
@@ -189,7 +195,6 @@ class ApiService {
       return result;
     } catch (e, s) {
       if (!_cancelToken.isCancelled) {
-        AppLogger.d(e.toString());
         AppLogger.d(s.toString());
         throw ApiException(error: ApiErrorMessage.APP_PARSE_ERROR);
       } else {

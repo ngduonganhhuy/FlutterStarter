@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_stater/core/themes/app_colors.dart';
-import 'package:flutter_stater/core/themes/app_themes.dart';
-import 'package:flutter_stater/core/utils/storage_util.dart';
-import 'package:flutter_stater/core/utils/utils.dart';
+import 'package:flutter_starter/core/themes/app_colors.dart';
+import 'package:flutter_starter/core/themes/app_themes.dart';
+import 'package:flutter_starter/core/utils/storage_util.dart';
+import 'package:flutter_starter/core/utils/utils.dart';
 
 part 'theme_event.dart';
 part 'theme_state.dart';
@@ -14,7 +14,7 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
     on<SetInitialTheme>(
       (event, emit) async {
         final currentAppTheme = getTheme();
-        await setTheme(emit, newTheme: currentAppTheme);
+        await setTheme(emit, newTheme: currentAppTheme ?? AppTheme.GreenLight);
       },
     );
 
@@ -30,7 +30,7 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
     return currentTheme;
   }
 
-  Future<void> setTheme(Emitter<ThemeState> emit, {required AppTheme? newTheme}) async {
+  Future<void> setTheme(Emitter<ThemeState> emit, {required AppTheme newTheme}) async {
     switch (newTheme) {
       case AppTheme.GreenLight:
         emit(GreenLightThemeState());
@@ -40,9 +40,7 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
         emit(GreenDarkThemeState());
       case AppTheme.BlueDark:
         emit(BlueDarkThemeState());
-      case null:
-        emit(GreenLightThemeState());
     }
-    await StorageUtil.putString(StorageKey.THEME, newTheme.toString());
+    await StorageUtil.putString(StorageKey.THEME, newTheme.key);
   }
 }

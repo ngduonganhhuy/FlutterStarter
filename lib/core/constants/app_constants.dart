@@ -27,22 +27,17 @@ class AppConstants {
       };
   static bool get isDev => getEnvironment() == Environment.DEV.toKeyUnique();
   static bool get isProduction => getEnvironment() == Environment.PRODUCT.toKeyUnique();
-
-  static String get baseUrl {
-    return _config[Config.BASE_URL] as String;
-  }
 }
 
 class Config {
-  static const BASE_URL = 'BASE_URL';
   static const TYPE = 'TYPE';
 
   static Map<String, dynamic> devConstants = {
-    BASE_URL: 'https://api.sandboxes.xyz/',
+    TYPE: Environment.DEV,
   };
 
   static Map<String, dynamic> productConstants = {
-    BASE_URL: 'https://api.danet.vn/',
+    TYPE: Environment.PRODUCT,
   };
 }
 

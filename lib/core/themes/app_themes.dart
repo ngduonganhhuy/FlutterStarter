@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_stater/core/themes/app_colors.dart';
+import 'package:flutter_starter/core/themes/app_colors.dart';
 
 enum AppTheme {
   GreenLight,
   GreenDark,
   BlueLight,
-  BlueDark,
+  BlueDark;
+
+  String get key => switch (this) {
+        GreenLight => 'GreenLight',
+        GreenDark => 'GreenDark',
+        BlueLight => 'BlueLight',
+        BlueDark => 'BlueDark',
+      };
 }
 
 final appColorsData = {

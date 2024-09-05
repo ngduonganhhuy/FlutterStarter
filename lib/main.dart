@@ -1,25 +1,30 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter_stater/core/utils/storage_util.dart';
-import 'package:flutter_stater/root/app/root.dart';
-import 'package:flutter_stater/root/bootstrap.dart';
+import 'package:flutter_starter/core/extensions/widget_extension.dart';
+import 'package:flutter_starter/core/utils/error_handler.dart';
+import 'package:flutter_starter/core/utils/storage_util.dart';
+import 'package:flutter_starter/injection_container.dart';
+import 'package:flutter_starter/root/app/root.dart';
+import 'package:flutter_starter/root/bootstrap.dart';
 
 Future<void> mainDelegate() async {
-  //TODO if true, just remove this comment
-  debugRepaintRainbowEnabled = true;
-  WidgetsFlutterBinding.ensureInitialized();
-  await StorageUtil.initPreferences();
-  registerErrorHandlers();
-  await bootstrap(() => const Root());
+  await runZonedGuarded<Future<void>>(
+    () async {
+      WidgetsFlutterBinding.ensureInitialized();
+      await StorageUtil.initPreferences();
+      registerErrorHandlers();
+      setupLocator();
+      await bootstrap(() => const Root());
+    },
+    ErrorHandler.handleAsyncError,
+  );
 }
 
 void registerErrorHandlers() {
   // * Show some error UI if any uncaught exception happens
-  FlutterError.onError = (FlutterErrorDetails details) {
-    FlutterError.presentError(details);
-    debugPrint(details.toString());
-  };
+  FlutterError.onError = ErrorHandler.handleFlutterError;
   // * Handle errors from the underlying platform/OS
   PlatformDispatcher.instance.onError = (Object error, StackTrace stack) {
     debugPrint(error.toString());
@@ -30,9 +35,9 @@ void registerErrorHandlers() {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: const Text('An error occurred'),
+        title: const Text('Holmes: 😡😡'),
       ),
-      body: Center(child: Text(details.toString())),
+      body: Text(details.toString()).center,
     );
   };
 }

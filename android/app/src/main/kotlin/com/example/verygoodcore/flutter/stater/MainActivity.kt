@@ -1,4 +1,4 @@
-package com.example.verygoodcore.flutter_stater
+package com.example.verygoodcore.flutter_starter
 
 import io.flutter.embedding.android.FlutterActivity
 

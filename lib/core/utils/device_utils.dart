@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_stater/core/utils/injection.dart';
+import 'package:flutter_starter/core/utils/injection.dart';
 
 enum ScreenType { desktop, tablet, handset, watch }
 

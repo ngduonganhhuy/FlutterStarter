@@ -1,5 +1,5 @@
-import 'package:flutter_stater/core/constants/app_constants.dart';
-import 'package:flutter_stater/main.dart';
+import 'package:flutter_starter/core/constants/app_constants.dart';
+import 'package:flutter_starter/main.dart';
 
 void main() {
   AppConstants.setEnvironment(Environment.PRODUCT);
