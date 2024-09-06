@@ -47,6 +47,7 @@ class ApiErrorMessage {
   static const CONNECTION_ERROR = 'Có lỗi xảy ra (code: 111)';
   static const NULL_RESPONSE = 'Có lỗi xảy ra (code: 112)';
   static const UNAUTHORIZED = 'Có lỗi xảy ra (code: 113)';
+  static const NOT_FOUND = 'Có lỗi xảy ra (code: 114)';
 
   static const ERROR_TRY_LATER = 'Có lỗi xảy ra. Vui lòng thử lại sau!';
 }
@@ -59,6 +60,10 @@ class ApiStatusCode {
   static const NotHavePermission = 403;
   static const InternalServerError = 500;
   static const AppCastError = 9999;
+}
+
+class NotFoundException extends ApiException {
+  NotFoundException() : super(error: ApiErrorMessage.NOT_FOUND, statusCode: 404);
 }
 
 class UnAuthorizeException extends ApiException {

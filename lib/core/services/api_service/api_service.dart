@@ -130,6 +130,8 @@ class ApiService {
         } else {
           throw UnAuthorizeException();
         }
+      case ApiStatusCode.NotFound:
+        throw NotFoundException();
       case ApiStatusCode.NotHavePermission:
         throw NoPemissionException();
       default:

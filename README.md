@@ -31,3 +31,7 @@ get:
 - Create new language by create file `app_$locale` in `lib/root/l10n/arb/app_$locale.arb` and set `@@locale`
 - Add `key: value` in `app_$locale.arb` and use in page `context.l10n.$key`
 - Note*: When you add new `key: value` in arb file. Please run `make lang` to generate and then you can use it
+
+## 🧐🧐 Rename Project
+
+- To create name project you need to install [rename](https://pub.dev/packages/rename) cli 

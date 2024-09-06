@@ -5,7 +5,7 @@ import 'package:logger/logger.dart';
 
 class AppLogger {
   static final logger = Logger(
-    printer: PrettyPrinter(colors: Platform.isAndroid, dateTimeFormat: DateTimeFormat.dateAndTime),
+    printer: PrettyPrinter(colors: Platform.isAndroid, dateTimeFormat: DateTimeFormat.dateAndTime, levelEmojis: {Level.debug: '🧐',},),
   );
 
   //[Debug]

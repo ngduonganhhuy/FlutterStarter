@@ -5,3 +5,4 @@ linter:
     lines_longer_than_80_chars: false
     constant_identifier_names: false
     one_member_abstracts: false
+    missing_code_block_language_in_doc_comment:
