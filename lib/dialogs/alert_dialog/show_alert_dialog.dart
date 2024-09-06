@@ -17,11 +17,11 @@ Future<bool?> showAlertDialog({
           if (cancelActionText != null)
             TextButton(
               child: Text(cancelActionText),
-              onPressed: () => Navigator.of(context).pop(false),
+              onPressed: () => NavigatorService.goBack(context, false),
             ),
           TextButton(
             child: Text(defaultActionText),
-            onPressed: () => Navigator.of(context).pop(true),
+            onPressed: () => NavigatorService.goBack(context, true),
           ),
         ],
       ),
@@ -36,11 +36,11 @@ Future<bool?> showAlertDialog({
         if (cancelActionText != null)
           CupertinoDialogAction(
             child: Text(cancelActionText),
-            onPressed: () => Navigator.of(context).pop(false),
+            onPressed: () => NavigatorService.goBack(context, false),
           ),
         CupertinoDialogAction(
           child: Text(defaultActionText),
-          onPressed: () => Navigator.of(context).pop(true),
+          onPressed: () => NavigatorService.goBack(context, true),
         ),
       ],
     ),
