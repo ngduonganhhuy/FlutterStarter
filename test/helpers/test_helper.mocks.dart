@@ -7,7 +7,7 @@ import 'dart:async' as _i4;
 
 import 'package:flutter_starter/core/error/failure.dart' as _i6;
 import 'package:flutter_starter/core/impl/result_response.dart' as _i2;
-import 'package:flutter_starter/data/data_sources/remote_data_source.dart'
+import 'package:flutter_starter/data/data_sources/weather_remote_data_source.dart'
     as _i7;
 import 'package:flutter_starter/data/models/weather_model.dart' as _i5;
 import 'package:flutter_starter/data/repositories/weather_repository.dart'
