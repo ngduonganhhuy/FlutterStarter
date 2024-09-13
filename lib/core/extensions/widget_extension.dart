@@ -83,9 +83,7 @@ extension WidgetHelpers on Widget {
   Widget get ctl => Align(alignment: Alignment.centerLeft, child: this);
 
   Widget clickable(VoidCallback? action, {bool opaque = true}) {
-    if (action == null) {
-      return this;
-    }
+    if (action == null) return this;
     return GestureDetector(
       behavior: opaque ? HitTestBehavior.opaque : HitTestBehavior.deferToChild,
       onTap: action,

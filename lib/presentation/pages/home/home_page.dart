@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_starter/core/constants/widget_constants.dart';
 import 'package:flutter_starter/core/impl/base_page.dart';
 import 'package:flutter_starter/core/services/navigation_service/navigator_service.dart';
 import 'package:flutter_starter/core/themes/app_colors.dart';
-import 'package:flutter_starter/core/themes/app_text_styles.dart';
 import 'package:flutter_starter/core/themes/app_themes.dart';
 import 'package:flutter_starter/core/utils/bloc_utils.dart';
 import 'package:flutter_starter/core_bloc/theme/theme_bloc.dart';
@@ -56,16 +56,12 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {
                     NavigatorService.goToWeatherPage(context);
                   },
-                  child: Text(
+                  child: MediumText(
                     'Go to weather page',
-                    style: appFont.size14(
-                      color: appScheme.primaryColor,
-                    ),
+                    color: appScheme.primaryColor,
                   ),
                 ),
-                const RSizedBox(
-                  height: 50,
-                ),
+                kGap50,
               ],
             ),
           ),

@@ -1,3 +1,4 @@
+import 'package:flutter_starter/data/models/weather_model.dart';
 import 'package:flutter_starter/domain/entities/weather.dart';
 
 final dataWeather = {

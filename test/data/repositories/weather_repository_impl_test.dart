@@ -4,7 +4,7 @@ import 'package:flutter_starter/core/error/exception.dart';
 import 'package:flutter_starter/core/error/failure.dart';
 import 'package:flutter_starter/core/impl/result_response.dart';
 import 'package:flutter_starter/data/models/weather_model.dart';
-import 'package:flutter_starter/data/repositories/weather_repository_impl.dart';
+import 'package:flutter_starter/data/repositories/weather_repository.dart';
 import 'package:flutter_starter/domain/entities/weather.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
