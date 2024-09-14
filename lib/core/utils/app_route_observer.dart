@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/core/services/api_service/api_service.dart';
-import 'package:flutter_starter/core/utils/logger.dart';
+import 'package:aes_room/core/services/api_service/api_service.dart';
+import 'package:aes_room/core/utils/logger.dart';
 
 class ScreenChangeModel {
   ScreenChangeModel({required this.screenName, required this.args});

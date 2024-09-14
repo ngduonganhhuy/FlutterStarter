@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/core/extensions/widget_extension.dart';
-import 'package:flutter_starter/core/utils/error_handler.dart';
-import 'package:flutter_starter/core/utils/storage_util.dart';
-import 'package:flutter_starter/injection_container.dart';
-import 'package:flutter_starter/root/app/root.dart';
-import 'package:flutter_starter/root/bootstrap.dart';
+import 'package:aes_room/core/extensions/widget_extension.dart';
+import 'package:aes_room/core/utils/error_handler.dart';
+import 'package:aes_room/core/utils/storage_util.dart';
+import 'package:aes_room/injection_container.dart';
+import 'package:aes_room/root/app/root.dart';
+import 'package:aes_room/root/bootstrap.dart';
 
 Future<void> mainDelegate() async {
   await runZonedGuarded<Future<void>>(

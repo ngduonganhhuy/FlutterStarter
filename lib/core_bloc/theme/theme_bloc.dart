@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_starter/core/themes/app_colors.dart';
-import 'package:flutter_starter/core/themes/app_themes.dart';
-import 'package:flutter_starter/core/utils/storage_util.dart';
-import 'package:flutter_starter/core/utils/utils.dart';
+import 'package:aes_room/core/themes/app_colors.dart';
+import 'package:aes_room/core/themes/app_themes.dart';
+import 'package:aes_room/core/utils/storage_util.dart';
+import 'package:aes_room/core/utils/utils.dart';
 
 part 'theme_event.dart';
 part 'theme_state.dart';

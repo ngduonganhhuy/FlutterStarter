@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:flutter_starter/core/extensions/bool_extension.dart';
-import 'package:flutter_starter/core/utils/logger.dart';
+import 'package:aes_room/core/extensions/bool_extension.dart';
+import 'package:aes_room/core/utils/logger.dart';
 
 class DebugInterceptor extends Interceptor {
   DebugInterceptor({this.printOnSuccess, this.convertFormData = true});

@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_starter/core/constants/api_urls.dart';
-import 'package:flutter_starter/core/error/exception.dart';
-import 'package:flutter_starter/data/data_sources/weather_remote_data_source.dart';
-import 'package:flutter_starter/data/models/weather_model.dart';
+import 'package:aes_room/core/constants/api_urls.dart';
+import 'package:aes_room/core/error/exception.dart';
+import 'package:aes_room/data/data_sources/weather_remote_data_source.dart';
+import 'package:aes_room/data/models/weather_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http_mock_adapter/http_mock_adapter.dart';
 

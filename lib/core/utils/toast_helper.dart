@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
-import 'package:flutter_starter/core/extensions/widget_extension.dart';
+import 'package:aes_room/core/extensions/widget_extension.dart';
 
 class ToastHelper {
   static void showToast(String msg, {Alignment? alignment}) {

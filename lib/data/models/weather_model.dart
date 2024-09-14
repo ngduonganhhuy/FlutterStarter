@@ -1,5 +1,5 @@
-import 'package:flutter_starter/core/utils/utils.dart';
-import 'package:flutter_starter/domain/entities/weather.dart';
+import 'package:aes_room/core/utils/utils.dart';
+import 'package:aes_room/domain/entities/weather.dart';
 
 class WeatherModel extends WeatherEntity {
   const WeatherModel({

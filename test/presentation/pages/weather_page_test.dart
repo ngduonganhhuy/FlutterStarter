@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_starter/presentation/bloc/weather/weather_bloc.dart';
-import 'package:flutter_starter/presentation/pages/weather/weather_page.dart';
+import 'package:aes_room/presentation/bloc/weather/weather_bloc.dart';
+import 'package:aes_room/presentation/pages/weather/weather_page.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

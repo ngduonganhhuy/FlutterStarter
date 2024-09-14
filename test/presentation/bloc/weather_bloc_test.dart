@@ -1,7 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:flutter_starter/core/error/failure.dart';
-import 'package:flutter_starter/core/impl/result_response.dart';
-import 'package:flutter_starter/presentation/bloc/weather/weather_bloc.dart';
+import 'package:aes_room/core/error/failure.dart';
+import 'package:aes_room/core/impl/result_response.dart';
+import 'package:aes_room/presentation/bloc/weather/weather_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 

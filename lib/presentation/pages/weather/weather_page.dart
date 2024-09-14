@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_starter/core/impl/base_page.dart';
-import 'package:flutter_starter/injection_container.dart';
-import 'package:flutter_starter/presentation/bloc/weather/weather_bloc.dart';
+import 'package:aes_room/core/impl/base_page.dart';
+import 'package:aes_room/injection_container.dart';
+import 'package:aes_room/presentation/bloc/weather/weather_bloc.dart';
 
 class WeatherPage extends StatefulWidget implements BasePage {
   const WeatherPage({super.key});

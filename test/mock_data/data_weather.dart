@@ -1,5 +1,5 @@
-import 'package:flutter_starter/data/models/weather_model.dart';
-import 'package:flutter_starter/domain/entities/weather.dart';
+import 'package:aes_room/data/models/weather_model.dart';
+import 'package:aes_room/domain/entities/weather.dart';
 
 final dataWeather = {
   'coord': {'lon': -74.006, 'lat': 40.7143},

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/core/themes/app_colors.dart';
+import 'package:aes_room/core/themes/app_colors.dart';
 
 enum AppTheme {
   GreenLight,

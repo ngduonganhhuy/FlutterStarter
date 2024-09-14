@@ -5,15 +5,15 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
 
-import 'package:flutter_starter/core/error/failure.dart' as _i6;
-import 'package:flutter_starter/core/impl/result_response.dart' as _i2;
-import 'package:flutter_starter/data/data_sources/weather_remote_data_source.dart'
+import 'package:aes_room/core/error/failure.dart' as _i6;
+import 'package:aes_room/core/impl/result_response.dart' as _i2;
+import 'package:aes_room/data/data_sources/weather_remote_data_source.dart'
     as _i7;
-import 'package:flutter_starter/data/models/weather_model.dart' as _i5;
-import 'package:flutter_starter/data/repositories/weather_repository.dart'
+import 'package:aes_room/data/models/weather_model.dart' as _i5;
+import 'package:aes_room/data/repositories/weather_repository.dart'
     as _i3;
-import 'package:flutter_starter/domain/entities/weather.dart' as _i9;
-import 'package:flutter_starter/domain/usecases/get_current_weather.dart'
+import 'package:aes_room/domain/entities/weather.dart' as _i9;
+import 'package:aes_room/domain/usecases/get_current_weather.dart'
     as _i8;
 import 'package:mockito/mockito.dart' as _i1;
 

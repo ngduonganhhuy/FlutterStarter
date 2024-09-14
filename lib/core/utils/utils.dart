@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/core/utils/logger.dart';
+import 'package:aes_room/core/utils/logger.dart';
 import 'package:intl/intl.dart';
 
 class Utils {

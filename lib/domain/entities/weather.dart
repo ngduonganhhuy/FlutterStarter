@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_starter/data/models/weather_model.dart';
+import 'package:aes_room/data/models/weather_model.dart';
 
 class WeatherEntity extends Equatable {
   const WeatherEntity({this.coord, this.weather, this.base, this.main, this.visibility, this.wind, this.clouds, this.dt, this.sys, this.timezone, this.id, this.name, this.cod});

@@ -1,7 +1,7 @@
-import 'package:flutter_starter/core/error/failure.dart';
-import 'package:flutter_starter/core/impl/result_response.dart';
-import 'package:flutter_starter/domain/entities/weather.dart';
-import 'package:flutter_starter/domain/usecases/get_current_weather.dart';
+import 'package:aes_room/core/error/failure.dart';
+import 'package:aes_room/core/impl/result_response.dart';
+import 'package:aes_room/domain/entities/weather.dart';
+import 'package:aes_room/domain/usecases/get_current_weather.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 

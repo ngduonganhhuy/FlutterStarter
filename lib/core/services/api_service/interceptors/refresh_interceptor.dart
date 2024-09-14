@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_starter/core/error/exception.dart';
-import 'package:flutter_starter/core/services/api_service/api_service.dart';
-import 'package:flutter_starter/core/utils/logout_helper.dart';
+import 'package:aes_room/core/error/exception.dart';
+import 'package:aes_room/core/services/api_service/api_service.dart';
+import 'package:aes_room/core/utils/logout_helper.dart';
 
 class RefreshInterceptor extends QueuedInterceptor {
   RefreshInterceptor();

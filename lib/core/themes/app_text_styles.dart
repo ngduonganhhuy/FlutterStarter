@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_starter/core/constants/constants.dart';
+import 'package:aes_room/core/constants/constants.dart';
 
 final roboto = RobotoTextStyle();
 final appFont = AppTextStyles();

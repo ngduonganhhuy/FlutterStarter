@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/core/impl/base_page.dart';
-import 'package:flutter_starter/core/utils/device_utils.dart';
-import 'package:flutter_starter/core/utils/utils.dart';
-import 'package:flutter_starter/presentation/pages/home/home_page.dart';
-import 'package:flutter_starter/presentation/pages/weather/weather_page.dart';
+import 'package:aes_room/core/impl/base_page.dart';
+import 'package:aes_room/core/utils/device_utils.dart';
+import 'package:aes_room/core/utils/utils.dart';
+import 'package:aes_room/presentation/pages/home/home_page.dart';
+import 'package:aes_room/presentation/pages/weather/weather_page.dart';
 
 class NavigatorService {
   static Future<T?> _goTo<T extends Object?>(

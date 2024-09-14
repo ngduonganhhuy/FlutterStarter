@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
-import 'package:flutter_starter/core/constants/constants.dart';
-import 'package:flutter_starter/core/utils/injection.dart';
-import 'package:flutter_starter/core_bloc/theme/theme_bloc.dart';
-import 'package:flutter_starter/presentation/pages/home/home_page.dart';
-import 'package:flutter_starter/root/l10n/l10n.dart';
+import 'package:aes_room/core/constants/constants.dart';
+import 'package:aes_room/core/utils/injection.dart';
+import 'package:aes_room/core_bloc/theme/theme_bloc.dart';
+import 'package:aes_room/presentation/pages/home/home_page.dart';
+import 'package:aes_room/root/l10n/l10n.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

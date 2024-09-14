@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/core/utils/app_route_observer.dart';
+import 'package:aes_room/core/utils/app_route_observer.dart';
 
 /// This use for global singleton like bloc, cubit,...
 class Injection {

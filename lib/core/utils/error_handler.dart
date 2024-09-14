@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_starter/core/error/exception.dart';
-import 'package:flutter_starter/core/utils/toast_helper.dart';
+import 'package:aes_room/core/error/exception.dart';
+import 'package:aes_room/core/utils/toast_helper.dart';
 
 class ErrorHandler {
   static void trackError(String error, StackTrace? stackTrace) {}

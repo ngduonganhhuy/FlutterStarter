@@ -3,16 +3,16 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_starter/core/constants/app_constants.dart';
-import 'package:flutter_starter/core/env/env.dart';
-import 'package:flutter_starter/core/error/exception.dart';
-import 'package:flutter_starter/core/services/api_service/interceptors/debug_interceptor.dart';
-import 'package:flutter_starter/core/services/api_service/interceptors/encoding_params_interceptor.dart';
-import 'package:flutter_starter/core/services/api_service/interceptors/refresh_interceptor.dart';
-import 'package:flutter_starter/core/utils/logger.dart';
-import 'package:flutter_starter/core/utils/logout_helper.dart';
-import 'package:flutter_starter/core/utils/path_helper.dart';
-import 'package:flutter_starter/core/utils/utils.dart';
+import 'package:aes_room/core/constants/app_constants.dart';
+import 'package:aes_room/core/env/env.dart';
+import 'package:aes_room/core/error/exception.dart';
+import 'package:aes_room/core/services/api_service/interceptors/debug_interceptor.dart';
+import 'package:aes_room/core/services/api_service/interceptors/encoding_params_interceptor.dart';
+import 'package:aes_room/core/services/api_service/interceptors/refresh_interceptor.dart';
+import 'package:aes_room/core/utils/logger.dart';
+import 'package:aes_room/core/utils/logout_helper.dart';
+import 'package:aes_room/core/utils/path_helper.dart';
+import 'package:aes_room/core/utils/utils.dart';
 
 enum RequestMethod { NONE, GET, POST, PATCH, PUT, DELETE, DOWNLOAD }
 
